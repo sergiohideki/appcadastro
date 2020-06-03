@@ -1,3 +1,4 @@
+import 'package:appcadastro/models/user.dart';
 import 'package:flutter/material.dart';
 
 import 'package:appcadastro/provider/users.dart';
@@ -15,13 +16,20 @@ class UserList extends StatelessWidget {
           actions: <Widget>[
             IconButton(
               icon: Icon(Icons.add),
-              onPressed: () {},
+              onPressed: () {
+                users.put(User(
+                  id: '4',
+                  name: 'Sergio',
+                  email: 'sergio@omsistemas.com',
+                  avatarUrl: '',
+                ));
+              },
             )
           ],
         ),
         body: ListView.builder(
           itemCount: users.count,
-          itemBuilder: (ctx, i) => UserTile(users.all.elementAt(i)),
+          itemBuilder: (ctx, i) => UserTile(users.byIndex(i)),
         ));
   }
 }
