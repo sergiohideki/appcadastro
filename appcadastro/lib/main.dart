@@ -1,4 +1,6 @@
 import 'package:appcadastro/provider/users.dart';
+import 'package:appcadastro/routes/app_routes.dart';
+import 'package:appcadastro/views/user_form.dart';
 import 'package:appcadastro/views/user_list.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -23,7 +25,10 @@ class MyApp extends StatelessWidget {
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
         debugShowCheckedModeBanner: false,
-        home: UserList(),
+        routes: {
+          AppRoutes.HOME: (_) => UserList(),
+          AppRoutes.USER_FORM: (_) => UserForm()
+        }
       ),
     );
   }

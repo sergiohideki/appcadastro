@@ -1,4 +1,4 @@
-import 'package:appcadastro/models/user.dart';
+import 'package:appcadastro/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 
 import 'package:appcadastro/provider/users.dart';
@@ -17,12 +17,9 @@ class UserList extends StatelessWidget {
             IconButton(
               icon: Icon(Icons.add),
               onPressed: () {
-                users.put(User(
-                  id: '4',
-                  name: 'Sergio',
-                  email: 'sergio@omsistemas.com',
-                  avatarUrl: '',
-                ));
+                Navigator.of(context).pushNamed(
+                  AppRoutes.USER_FORM,
+                );
               },
             )
           ],
